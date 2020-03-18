@@ -1,0 +1,113 @@
+.main {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.history{
+  padding-top: 100px;
+  text-align: center;
+}
+
+.field {
+  padding-top: 100px;
+  text-align: center;
+
+  &__table {
+    border: whitesmoke;
+    margin: auto;
+    border-collapse: collapse;
+  }
+
+  &__table-row {
+    margin: 0px;
+  }
+
+  &__table-cell {
+    height: 19px;
+    width: 19px;
+    border: 1px solid whitesmoke;
+    padding: 0px;
+    font-size: 10px;
+    font-family: "Times New Roman";
+    cursor: pointer;
+    line-height: 19px;
+    background-color: lightgrey;
+    &_mine{
+      background-color: red;
+    }
+  }
+}
+
+.body_no-spacing {
+  margin: 0px;
+  padding: 0px;
+}
+
+.buttons {
+  padding: 0px;
+  margin: 0px;
+  height: 35px;
+
+  &__main {
+    padding: 0px;
+    margin: 0px;
+    height: 35px;
+    width: 35px;
+  }
+
+  &__text {
+    padding: 0px;
+    margin: 10px;
+    height: 30px;
+    width: 100px;
+    font-family: "Times New Roman", serif;
+    font-size: 25px;
+  }
+
+  &__field {
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    width: 20px;
+    font-family: "Times New Roman";
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15%;
+  height: 7px;
+  border-radius: 5px;
+  background: grey;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: green;
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: green;
+    cursor: pointer;
+  }
+}

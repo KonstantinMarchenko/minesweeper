@@ -24,7 +24,14 @@ class GameResults {
   }
 }
 
-let sliderX = $('<input type="range" min="4" max="30" value="10" class="slider" id="range_1">'),
+let radioButtons = $('<input type="radio" id="radioButton_1" name="settings" value="1"/>\n' +
+  '<label for="radioButton_1" name="settings" value="1"/><span></span>Novice</label>\n' +
+  '<p></p>\n' + '<input type="radio" id="radioButton_2" name="settings" value="2"//>\n' +
+  '<label for="radioButton_2"><span></span>Amateur</label>\n' +
+  '<p></p>\n' + '<input type="radio" id="radioButton_3" name="settings" value="3"//>\n' +
+  '<label for="radioButton_3"><span></span>Master</label>\n' +
+  '<p></p>'),
+  sliderX = $('<input type="range" min="4" max="30" value="10" class="slider" id="range_1">'),
   sliderY = $('<input type="range" min="4" max="30" value="10" class="slider" id="range_2">'),
   sliderMines = $('<input type="range" min="1" max="30" value="10" class="slider" id="range_3">'),
   valueX = $('<div>Rows: <span id="value_1"></span></div>'),
@@ -50,6 +57,7 @@ if ($(window).width() <= 425 || $(window).height() <= 425) {
   sliderY.prop('max', '16');
 }
 
+radioButtons.appendTo('.main');
 sliderX.appendTo('.main');
 valueX.appendTo('.main');
 sliderY.appendTo('.main');
@@ -192,6 +200,32 @@ $('.history').on('click', '#button_back_from_history', function () {
   $('.field').show();
   $('.history').empty();
 });
+
+$('input[name="settings"]').on('change', function () {
+  if ($(this).val() == '1') {
+    $('#range_1').val('8');
+    $('#range_2').val('8');
+    $('#range_3').val('15');
+    $('#value_1').text('8');
+    $('#value_2').text('8');
+    $('#value_3').text('15%');
+  } else if ($(this).val() == '2') {
+    $('#range_1').val('16');
+    $('#range_2').val('16');
+    $('#range_3').val('15');
+    $('#value_1').text('16');
+    $('#value_2').text('16');
+    $('#value_3').text('15%');
+  } else if ($(this).val() == '3') {
+    $('#range_1').val('16');
+    $('#range_2').val('30');
+    $('#range_3').val('20');
+    $('#value_1').text('16');
+    $('#value_2').text('30');
+    $('#value_3').text('20%');
+  }
+});
+
 
 function createField(x, y) {
   let flagField = $('<span class="buttons__text" id="flag_field">Flags: ' + numberOfFlags + '</span>');
